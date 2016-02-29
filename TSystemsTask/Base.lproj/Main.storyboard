@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TSystemsTask" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,54 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyJ-J0-9Dg">
+                                <rect key="frame" x="20" y="549" width="560" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Показать дерево с глубиной 4"/>
+                                <connections>
+                                    <action selector="printSecondCircleButtonTTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8L8-b2-QQa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3G-HE-zRY">
+                                <rect key="frame" x="26" y="20" width="549" height="330"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McS-w6-Bvs">
+                                <rect key="frame" x="26" y="489" width="549" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Показать дерево TSystems"/>
+                                <connections>
+                                    <action selector="printCirleButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xf7-cg-GPj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="McS-w6-Bvs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="0Ou-05-ted"/>
+                            <constraint firstItem="eyJ-J0-9Dg" firstAttribute="top" secondItem="McS-w6-Bvs" secondAttribute="bottom" constant="30" id="32W-I5-KUI"/>
+                            <constraint firstItem="T3G-HE-zRY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Flv-8p-bNj"/>
+                            <constraint firstItem="T3G-HE-zRY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="H8B-j2-IK5"/>
+                            <constraint firstItem="eyJ-J0-9Dg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="IEN-Ed-sVH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="McS-w6-Bvs" secondAttribute="trailing" constant="20" id="Jrb-VJ-uHz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="T3G-HE-zRY" secondAttribute="trailing" constant="20" id="K3B-Kk-t8G"/>
+                            <constraint firstItem="T3G-HE-zRY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="KvX-mA-uZK"/>
+                            <constraint firstItem="McS-w6-Bvs" firstAttribute="top" secondItem="T3G-HE-zRY" secondAttribute="bottom" constant="140" id="RYc-qc-bNB"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="eyJ-J0-9Dg" secondAttribute="bottom" constant="20" id="jcN-nK-Idf"/>
+                            <constraint firstItem="eyJ-J0-9Dg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wkp-7B-2KA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonMyTree" destination="McS-w6-Bvs" id="zvZ-qW-oLs"/>
+                        <outlet property="buttonTSystemTree" destination="eyJ-J0-9Dg" id="v2Y-eD-Ha9"/>
+                        <outlet property="labelDescription" destination="T3G-HE-zRY" id="bcu-13-Qwy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="600" y="478"/>
         </scene>
     </scenes>
 </document>
